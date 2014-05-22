@@ -12,7 +12,7 @@
 <rfc category="info" ipr="trust200811" docName="draft-snell-jsondoc-00"> 
   <front> 
     <title abbrev="JSON Documentation Model"> 
-      The JSOIN Documentation Model
+      The JSON Documentation Model
     </title> 
  
     <author initials="J.M." surname="Snell" fullname="James M Snell"> 
