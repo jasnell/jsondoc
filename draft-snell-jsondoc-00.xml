@@ -113,7 +113,7 @@
 
     </section>
 
-    <section title="ABNF Grammar References">
+    <section title="ABNF Grammar and Code Set References">
 
       <t>
         In many specification documents, the ABNF grammar is used to formally 
@@ -151,6 +151,44 @@
         Here, the value of the "bar" property from our previous example is 
         specified as being conformant to the 'token' ABNF rule from RFC 2616.
       </t>
+
+      <t>
+        In addition, code sets can be referenced to indicate that a property
+        can exhibit values from a code set specified in an external standards
+        document.
+      </t>
+      <t>
+        For example, in the same way an ABNF rule definition can be referenced,
+        an ISO code set can be referenced by prefixing a rule with a "backtick" (`).
+        For instance:
+      </t>
+      <figure><artwork>
+  `currency // ISO4217
+      </artwork></figure>
+
+      <t>
+        Indicates that we are borrowing the currency code set rule as specified
+        in the ISO 4217 standard.
+      </t>
+
+      <t>
+        Once the rule is declared, we can use it anywhere within our JSON
+        model description, for instance:
+      </t>
+
+      <figure><artwork>
+  `currency // ISO4217
+  price {
+    "amount" (number),
+    ["currency" (`currency)]
+  }
+      </artwork></figure>
+
+      <t>
+        Here, the value of the "currency" property of a price rule is
+        specified as taking values from the ISO 4217 currency code set.
+      </t>
+
 
     </section>
 
